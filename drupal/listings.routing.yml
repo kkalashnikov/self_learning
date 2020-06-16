@@ -1,7 +1,0 @@
-listing.listing:
-  path: '/listing'
-  defaults:
-    _controller: '\Drupal\listing\Controller\Lists::listing'
-    _title: 'Listing'
-  requirements:
-    _permission: 'access content'
