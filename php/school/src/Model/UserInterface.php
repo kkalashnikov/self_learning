@@ -1,7 +1,7 @@
 <?php
 
 /**
- *
+ * User interface.
  */
 interface UserInterface {
 

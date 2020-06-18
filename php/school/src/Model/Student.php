@@ -35,7 +35,7 @@ class Student implements UserInterface {
    *
    * @var object
    */
-  protected $db;
+  protected $connection;
 
   /**
    * Student constructor.
@@ -135,7 +135,7 @@ class Student implements UserInterface {
   }
 
   /**
-   * Update Student information.
+   * Insert Student information.
    *
    * return bool
    *   True|False
@@ -155,35 +155,6 @@ class Student implements UserInterface {
     }
 
     return FALSE;
-  }
-
-  /**
-   * @param $school_id
-   *
-   * @return array|string|void
-   */
-  public function listStudentsBySchool($school_id) {
-    $output = [];
-    $query = "SELECT st.id, st.name, st.email, st.mobile, st.address, st.age, st.gender,
-    sc.name AS school_name,
-    cl.name as class_name, cl.subjects, cl.section
-    from students AS st
-    LEFT JOIN schools AS sc ON st.school_id = sc.id
-    LEFT JOIN classes AS cl ON st.class_id = cl.id
-    WHERE sc.id = {$school_id}";
-    try {
-      $result = $this->db->query($query);
-    }
-    catch (\Exception $e) {
-      return $e->getMessage();
-    }
-    if ($result->num_rows > 0) {
-      while ($rows = $result->fetch_assoc()) {
-        $output[] = $rows;
-      }
-    }
-
-    return $output;
   }
 
 }

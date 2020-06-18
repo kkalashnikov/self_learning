@@ -2,10 +2,9 @@
 include($_SERVER['DOCUMENT_ROOT']. '/src/Model/School.php');
 include($_SERVER['DOCUMENT_ROOT'] . '/src/Model/Student.php');
 $school = new School();
+// School lists
 $school_list_arr = $school->listAllSchools();
 $school_list = array_column($school_list_arr, 'name','id');
-
-
 ?>
 
 <!DOCTYPE html>
@@ -91,13 +90,6 @@ $school_list = array_column($school_list_arr, 'name','id');
           <?php echo $errName; ?>
         </div>
       </div>
-      <!-- <div class="form-group row">
-        <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-        <div class="col-sm-10">
-          <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Password">
-          <?php //echo $errPass; ?>
-        </div>
-      </div> -->
       <div class="form-group row">
         <div class="offset-sm-2 col-sm-10">
           <input type="submit" value="Register" name="submit" class="btn btn-primary"/>

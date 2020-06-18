@@ -1,5 +1,5 @@
 <?php
-//include($_SERVER['DOCUMENT_ROOT'] . '/src/Model/School.php');
+include($_SERVER['DOCUMENT_ROOT'] . '/src/Model/School.php');
 include($_SERVER['DOCUMENT_ROOT'] . '/src/Model/Classes.php');
 
 $school = new School();
@@ -29,7 +29,6 @@ $classes = new Classes();
       foreach ($class_list as $value) {
         $school_class_arr[] = "(".$school_id.",".$value.")";
       }
-      //$school->updateSchoolAndClass($school_class_arr);
 
     }
   ?>
@@ -46,9 +45,10 @@ $classes = new Classes();
             <tbody>
                   <?php
                   foreach($school_list as $value){
-                    $school->setSchoolId($value['id']);
-                    $class_list = $school->classesBySchoolId();
+                    // Classes by school id.
+                    $class_list = $classes->classesBySchoolId($value['id']);
                     $classes_info = $classes->getClassNameById(array_column($class_list, 'class_id'));
+                    // Fetch class name by class id.
                     $classes_name = array_column($classes_info, 'name');
 
                     echo '<tr>';

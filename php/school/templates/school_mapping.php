@@ -1,8 +1,9 @@
 <?php
 include($_SERVER['DOCUMENT_ROOT'] . '/src/Model/Classes.php');
+include($_SERVER['DOCUMENT_ROOT'] . '/src/Model/School.php');
 
 $classes = new Classes();
-// Class associative array
+// Classes associative array
 $class_list = $classes->getClasses();
 ?>
 <!DOCTYPE html>

@@ -3,17 +3,26 @@
 include_once($_SERVER['DOCUMENT_ROOT'] . '/database/ConnectToDb.php');
 
 /**
- * Provides school listing module.
+ * Class School.
  */
 class School {
 
-
+  /**
+   * School id.
+   *
+   * @var int
+   */
   private $id;
 
+  /**
+   * Database object.
+   *
+   * @var object
+   */
   private $connection;
 
   /**
-   * Student constructor.
+   * School constructor.
    */
   function __construct() {
     // Connecting to database.
@@ -21,17 +30,34 @@ class School {
     $this->connection = $connection->connectToDatabase();
   }
 
+  /**
+   * Set school id.
+   *
+   * @var int $id
+   *
+   * @return object
+   *   Class reference
+   */
   public function setSchoolId($id){
     $this->id = $id;
     return $this;
   }
 
+  /**
+   * Get school id.
+   *
+   * @return int
+   *   School id.
+   */
   public function getSchoolId(){
     return $this->id;
   }
 
   /**
+   * Register school into db.
    *
+   * @var string $school
+   *   School name.
    */
   public function registerSchool($school){
     $query = "INSERT INTO school (`name`) VALUES('$school')";
@@ -48,7 +74,10 @@ class School {
     }
   }
   /**
+   * Mapping school and classes.
    *
+   * @var array $school_cls_map
+   *   School classes array.
    */
   public function insertSchoolAndClass($school_cls_map){
     $values = implode(",", $school_cls_map);
@@ -65,7 +94,7 @@ class School {
   }
 
   /**
-   *
+   * List schools
    */
   public function listAllSchools(){
     $sql = "SELECT `id`,`name` FROM school";
@@ -78,15 +107,4 @@ class School {
     return $result->num_rows > 0 ? $result->fetch_all(MYSQLI_ASSOC) : [];
   }
 
-  public function classesBySchoolId(){
-    $sql = "SELECT `class_id` FROM school_class_mapping
-              WHERE `school_id` = '.$this->id.'";
-    try {
-      $result = $this->connection->query($sql);
-    }
-    catch (\Exception $e) {
-      return $e->getMessage();
-    }
-    return $result->num_rows > 0 ? $result->fetch_all(MYSQLI_ASSOC) : [];
-  }
 }
