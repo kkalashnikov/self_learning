@@ -13,7 +13,6 @@ $class_list = $classes->getClasses();
 </head>
 <body>
   <?php
-    include('header.php');
     if(isset($_POST['submit'])) {
       $school_name= $_POST['school_name'];
       $class_ids= $_POST['class_list'];

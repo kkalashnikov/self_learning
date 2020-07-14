@@ -19,7 +19,6 @@ $classes = new Classes();
 
 <body>
     <?php
-    include('header.php');
     if(isset($_POST['submit'])) {
       $school_name= $_POST['school_name'];
       $class_list= $_POST['class_list'];

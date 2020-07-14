@@ -34,7 +34,6 @@ $school_list = array_column($school_list_arr, 'name','id');
 </head>
 <body>
   <?php
-    include('header.php');
     if(isset($_POST['submit'])) {
       $student = new Student();
       unset($_POST['submit']);

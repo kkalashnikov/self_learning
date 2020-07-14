@@ -4,8 +4,6 @@ namespace Model;
 
 use Database\ConnectToDb;
 
-//include_once($_SERVER['DOCUMENT_ROOT'] . '/database/ConnectToDb.php');
-
 /**
  * Class School.
  */

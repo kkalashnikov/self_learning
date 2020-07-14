@@ -22,18 +22,18 @@ use Model\Strategy\Facebook;
     ];
 
     $context = new StrategyContext(new Email);
-    echo "Client: Strategy is set to Email.\n";
+    echo "<b>Client: Strategy is set to Email.</b><br>";
     $context->default($data);
 
-    echo "\n";
+    echo "<br><br>";
 
-    echo "Client: Strategy is set to Whatsapp message.\n";
+    echo "<b>Client: Strategy is set to Whatsapp message.</b><br>";
     $context  = new StrategyContext(new Whatsapp);
     $context->default($data);
 
-    echo "\n";
+    echo "<br><br>";
 
-    echo "Client: Strategy is set to Facebook message.\n";
+    echo "<b>Client: Strategy is set to Facebook message.</b><br>";
     $context = new StrategyContext(new Facebook);
     $context->default($data);
   ?>
