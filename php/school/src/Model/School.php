@@ -1,6 +1,10 @@
 <?php
 
-include_once($_SERVER['DOCUMENT_ROOT'] . '/database/ConnectToDb.php');
+namespace Model;
+
+use Database\ConnectToDb;
+
+//include_once($_SERVER['DOCUMENT_ROOT'] . '/database/ConnectToDb.php');
 
 /**
  * Class School.
@@ -25,9 +29,12 @@ class School {
    * School constructor.
    */
   function __construct() {
+
+
     // Connecting to database.
     $connection = new ConnectToDb();
     $this->connection = $connection->connectToDatabase();
+
   }
 
   /**

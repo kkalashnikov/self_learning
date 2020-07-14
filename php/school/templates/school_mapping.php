@@ -1,6 +1,6 @@
 <?php
-include($_SERVER['DOCUMENT_ROOT'] . '/src/Model/Classes.php');
-include($_SERVER['DOCUMENT_ROOT'] . '/src/Model/School.php');
+use Model\Classes;
+use Model\School;
 
 $classes = new Classes();
 // Classes associative array

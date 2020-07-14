@@ -1,6 +1,8 @@
 <?php
-include($_SERVER['DOCUMENT_ROOT']. '/src/Model/School.php');
-include($_SERVER['DOCUMENT_ROOT'] . '/src/Model/Student.php');
+
+use Model\School;
+use Model\Student;
+
 $school = new School();
 // School lists
 $school_list_arr = $school->listAllSchools();

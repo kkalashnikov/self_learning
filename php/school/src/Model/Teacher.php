@@ -1,5 +1,7 @@
 <?php
 
+use Database\ConnectToDb;
+
 /**
  * Teachers class.
  */
@@ -17,8 +19,8 @@ class Teachers extends School {
   }
 
   /**
-   * Will return all teachers uid 
-   * 
+   * Will return all teachers uid
+   *
    * @return array
    * Users uid
    */

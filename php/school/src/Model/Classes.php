@@ -1,6 +1,8 @@
 <?php
 
-include_once($_SERVER['DOCUMENT_ROOT'] . '/database/ConnectToDb.php');
+namespace Model;
+
+use Database\ConnectToDb;
 
 /**
  * Class classes.

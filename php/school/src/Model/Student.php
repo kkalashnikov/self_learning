@@ -1,7 +1,8 @@
 <?php
 
-include_once($_SERVER['DOCUMENT_ROOT'] . '/database/ConnectToDb.php');
-include_once('UserInterface.php');
+namespace Model;
+
+use Database\ConnectToDb;
 
 /**
  * Students class.

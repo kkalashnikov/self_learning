@@ -11,9 +11,10 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <ul class="nav navbar-nav">
-      <li><a href="/templates/school_mapping.php">School class mapping</a></li>
-      <li><a href="/templates/student_registration.php">Student Registration</a></li>
-      <li><a href="/templates/school_list.php">Schools</a></li>
+      <li><a href="/school-mapping">School class mapping</a></li>
+      <li><a href="/student-registration">Student Registration</a></li>
+      <li><a href="/school-list">Schools</a></li>
+      <li><a href="/notification">Strategy</a></li>
     </ul>
   </div>
 </nav>

@@ -1,14 +1,13 @@
 <?php
-include($_SERVER['DOCUMENT_ROOT'] . '/src/Model/School.php');
-include($_SERVER['DOCUMENT_ROOT'] . '/src/Model/Classes.php');
+
+use Model\School;
+use Model\Classes;
 
 $school = new School();
 // Class associative array
 $school_list = $school->listAllSchools();
 
 $classes = new Classes();
-// $classes = $school->classesBySchoolId(array_column($school_list,'id'));
-// print_r($classes); die;
 
 ?>
 <!DOCTYPE html>
@@ -24,7 +23,6 @@ $classes = new Classes();
     if(isset($_POST['submit'])) {
       $school_name= $_POST['school_name'];
       $class_list= $_POST['class_list'];
-      $school = new School();
       $school_id = $school->registerSchool($school_name);
       foreach ($class_list as $value) {
         $school_class_arr[] = "(".$school_id.",".$value.")";
