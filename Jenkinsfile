@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        Maven 'M3'
+        Maven 'MAVEN_HOME'
     }
     stages {
         stage('git repo & clean') {
