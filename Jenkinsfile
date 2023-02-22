@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    tools {
+        maven 'Maven 3.9.0'
+        jdk 'Java 11.7.2'
+    }
     stages {
         stage('git repo & clean') {
             steps {
