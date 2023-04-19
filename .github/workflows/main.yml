@@ -4,8 +4,7 @@ name: Self Learning
 on:
   push:
     branches:
-      - main # or the name of your main branch
-      - sonar-bug
+      - master # or the name of your main branch
 jobs:
   sonarqubeAnalysis:
     name: SonarQube Analysis
